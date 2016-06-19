@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/swal.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/odometer.css" />    
+    <link id="current-css" rel="stylesheet" type="text/css" href="" />    
+
+    <style type="text/css">
+    	
+    	.payment-option
+    	{
+    		        color: #737373;
+				    text-transform: capitalize;
+				    font-weight: bold;
+				    font-size: 18px;
+				    border: 1px solid #d6d6d6;
+				    border-radius: 2px;
+				    margin-top: 8px;
+
+    	}
+
+    </style>
+
+    
+    <title>Shoppy</title>
+</head>
+
+<body>
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+
+<!--nav bar starts -->
+
+<div id="nav-bar">
+			<div id="toggle-side-menu" data-menu-state="0">
+					<i id='nav-icon' class="fa fa-navicon" style="font-size: 30px;"></i>
+			</div>
+			<i id="img-search-button" class="fa fa-search img-search-button"></i>
+			<i id="img-cart-button" class="img-cart-button fa fa-shopping-bag"></i>
+			<span id="cart-badge" class="badge odometer">0</span>
+</div>
+
+<div class="fake-nav-bar"></div>
+<!--nav bar ends -->
+
+<!--side menu starts -->
+<div id="side-menu">
+		<!-- user tag -->
+		<div style="" id="user-tags-container">
+				
+				<!-- user picture -->
+				<img class="img-user-picture"/>	
+
+				<!-- user NAME-->
+				<div class="side-menu-user-name">Arun Sharma</div>
+				
+				<!-- user id-->
+				<div class="side-menu-user-id">hotdudehvfun@gmail.com</div>
+
+		</div>
+		<!-- menu main items -->
+		<div style="position: relative; top: 26%;">
+
+					<button class="menu-item" id="side-menu-item-home">
+					<img class="img-side-menu-home-button"/>Home</button>
+					
+
+					<button class="accordion">
+					<img class="img-side-menu-woman-button"/>
+					Woman
+					</button>
+
+						<div class="panel">
+						  
+								<button class="accordion">
+									<img class="img-side-menu-indian-wear-button"/>
+										Indian Wear					
+								</button>	  
+								<div id="side-menu-woman-indian-wear-panel" class="panel">
+								<button onclick="browseProducts('productName')" class="menu-item">Suits</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Kurta</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Salwars</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Dupatta</button>	
+								<button onclick="browseProducts('productName')"	 class="menu-item">Shawls</button>	
+								</div>
+						</div>
+
+					<button class="menu-item" id="side-menu-item-account">
+					<img class="img-side-menu-account-button"/>
+					Account
+					</button>
+
+					<button  class="menu-item" id="side-menu-item-orders">
+					<img class="img-side-menu-orders-button"/>
+					Orders
+					</button>
+					
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-rate-app">
+					<img class="img-side-menu-rate-app-button"/>
+					Rate App
+					</button>
+
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-settings">
+					<img class="img-side-menu-settings-button"/>
+					Settings
+					</button>
+					
+
+						
+		</div>
+		
+</div>
+<!--side menu ends-->
+
+
+<!--search query popup starts -->
+<div data-is-hidden="yes" id="search-popup-outer">
+		<div id="search-popup-inner">
+					<!-- search box -->
+					<form action="" method="GET">
+					    
+					    <input type="text" placeholder="search goes here">
+					</form>
+					<!-- results -->
+					<div id="search-results">
+						<div class="result-count">3 results</div>
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+							
+					</div>
+
+						
+		</div>
+	
+</div>
+	
+</div>
+<!--search query popup ends -->
+<div id="home-screen-content">				
+
+
+<div style="
+    text-align: center;
+    border: 1px solid #00BCD4;
+    color: #00BCD4;
+    background: rgba(0, 188, 212, 0.15);
+    font-size: 21px;
+    margin-top: 5%;
+    border-radius: 2px;
+">Payment Method</div>
+
+
+<div style="
+    margin: 5%;
+    border: 1px solid #cacaca;
+    padding: 10px;
+    border-radius: 2px;
+">
+
+	<div onclick="swal('Not now','We need a payment gateway for that!','error')"  class="payment-option">Credit card/Debit Card</div>	
+	<div onclick="swal('Not now','We need a payment gateway for that!','error')"  class="payment-option">Net banking</div>	
+	<div onclick="swal('Not now','We need a payment gateway for that!','error')"  class="payment-option">Cash on delivery</div>	
+
+
+</div>
+	
+<div style="text-align: center;border: 1px solid #00BCD4;color: #00BCD4;background: rgba(0, 188, 212, 0.15);font-size: 21px;margin-top: 5%;border-radius: 2px;">Order Summary</div>
+<div>Total items: <span id="cart-item-count">0</span>  </div>
+<div>Total cart value:<span id="cart-value-count">0</span>  </div>
+
+
+<div style="text-align: center;border: 1px solid #00BCD4;color: #00BCD4;background: rgba(0, 188, 212, 0.15);font-size: 18px;margin-top: 5%;text-transform: capitalize;border-radius: 2px;">Expected delivery : 4-6 days</div>
+
+
+
+
+<hr>
+	<button onclick="window.location='index.html'" class="mybutton" style="
+">Cancel	</button>
+<button onclick="swal('Good job','Order will be placed','success')" style="float:right" class="mybutton">Order</button>
+
+	
+		
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="short-popup-target"></div>
+
+
+	<script type="text/javascript" src="js/jmin.js"></script>
+	<script type="text/javascript" src="js/swal.js"></script>
+
+    <script type="text/javascript" src="js/odometer.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/sideMenuAndNavBarEvents.js"></script>    
+    <script type="text/javascript" src="js/index.ajax.js"></script>    
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/imgcss.css" />
+    <script type="text/javascript">
+        app.initialize();        
+         window.onload=function() 
+        {
+        	swal('Payment method Screen','No need to fill inputs!! Requires payment gateway');
+        }
+    </script>
+</body>
+
+</html>

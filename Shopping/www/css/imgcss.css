@@ -1,0 +1,114 @@
+.img-search-button
+{
+	
+	    position: absolute;
+    height: 30px;
+    right: 80px;
+    top: 22px;
+    font-size: 25px;
+}
+
+.img-cart-button
+{
+	
+	position: absolute;
+    height: 40px;
+    top: 20px;
+    right: 22px;
+    font-size: 25px;
+}
+
+.img-user-picture
+{
+	content: url("../img/girl.svg");
+    height: 60px;
+    position: absolute;
+    left: 6%;
+    top: 11%;
+    width: 60px;
+}
+
+
+.img-side-menu-home-button
+{
+	content: url("../img/home.svg");
+	height:25px;
+	width:25px;
+
+}
+
+
+.img-side-menu-man-button
+{
+	content: url("../img/boy.svg");
+	height:25px;
+	width:25px;	
+}
+
+.img-side-menu-woman-button
+{
+	content: url("../img/girl.svg");
+	height:25px;
+	width:25px;	
+}
+
+.img-side-menu-account-button
+{
+	content: url("../img/archive.svg");
+	height:25px;
+	width:25px;
+}
+
+.img-side-menu-orders-button
+{
+	content: url("../img/orders.svg");
+	height:25px;
+	width:25px;
+}
+
+.img-side-menu-rate-app-button
+{
+	content: url("../img/star.svg");
+	height:25px;
+	width:25px;
+}
+
+.img-side-menu-settings-button
+{
+	content: url("../img/controls.svg");
+	height:25px;
+	width:25px;
+}
+
+.img-side-menu-indian-wear-button
+{
+	content: url("../img/dress.svg");
+	height: 25px;
+	width:25px;
+}
+
+
+
+
+.product-add-to-wishlist-button
+{
+	content: url("../img/add-to-wishlist.svg");
+}
+.product-added-to-wishlist-button
+{
+	content: url("../img/added-to-wishlist.svg");
+
+}
+
+
+
+
+.product-add-to-cart-button
+{
+	content: url("../img/cart-green.svg");
+}
+.product-added-to-cart-button
+{
+	content: url("../img/cart-red.svg");
+}
+

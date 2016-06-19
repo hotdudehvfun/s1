@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    <style>
+		.mySlides {display:none}
+	</style>
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/swal.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/odometer.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" /> 
+
+
+    <link id="current-css" rel="stylesheet" type="text/css" href="" />    
+
+    
+    <title>Shoppy</title>
+</head>
+
+<body>
+
+<!--nav bar starts -->
+<div id="nav-bar">
+
+			<div id="toggle-side-menu" data-menu-state="0">
+					<i id='nav-icon' class="fa fa-navicon" style="font-size: 30px;"></i>
+			</div>
+			<i id="img-search-button" class="fa fa-search img-search-button"></i>
+			<i id="img-cart-button" class="img-cart-button fa fa-shopping-bag"></i>
+			<span id="cart-badge" class="badge odometer">0</span>
+</div>
+<div class="fake-nav-bar"></div>
+<!--nav bar ends -->
+
+<!--side menu starts -->
+<div id="side-menu">
+		<!-- user tag -->
+		<div style="" id="user-tags-container">
+				
+				<!-- user picture -->
+				<img class="img-user-picture"/>	
+
+				<!-- user NAME-->
+				<div class="side-menu-user-name">Arun Sharma</div>
+				
+				<!-- user id-->
+				<div class="side-menu-user-id">hotdudehvfun@gmail.com</div>
+
+		</div>
+		<!-- menu main items -->
+		<div style="position: relative; top: 26%;">
+
+					<button class="menu-item" id="side-menu-item-home">
+					<img class="img-side-menu-home-button"/>Home</button>
+					
+
+					<button class="accordion">
+					<img class="img-side-menu-woman-button"/>
+					Woman
+					</button>
+
+						<div class="panel">
+						  
+								<button class="accordion">
+									<img class="img-side-menu-indian-wear-button"/>
+										Indian Wear					
+								</button>	  
+								<div id="side-menu-woman-indian-wear-panel" class="panel">
+								<button onclick="browseProducts('productName')" class="menu-item">Suits</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Kurta</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Salwars</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Dupatta</button>	
+								<button onclick="browseProducts('productName')"	 class="menu-item">Shawls</button>	
+								</div>
+						</div>
+
+					<button class="menu-item" id="side-menu-item-account">
+					<img class="img-side-menu-account-button"/>
+					Account
+					</button>
+
+					<button  class="menu-item" id="side-menu-item-orders">
+					<img class="img-side-menu-orders-button"/>
+					Orders
+					</button>
+					
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-rate-app">
+					<img class="img-side-menu-rate-app-button"/>
+					Rate App
+					</button>
+
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-settings">
+					<img class="img-side-menu-settings-button"/>
+					Settings
+					</button>
+					
+
+						
+		</div>
+		
+</div>
+<!--side menu ends-->
+
+<!--search query popup starts -->
+<div data-is-hidden="yes" id="search-popup-outer">
+		<div id="search-popup-inner">
+					<!-- search box -->
+					<form action="" method="GET">
+					    
+					    <input type="text" placeholder="search goes here">
+					</form>
+					<!-- results -->
+					<div id="search-results">
+						<div class="result-count">3 results</div>
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+							
+					</div>
+
+						
+		</div>
+	
+</div>
+	
+</div>
+<!--search query popup ends -->
+
+
+<div id="home-screen-content">				
+  <div class="w3-content" style="max-width:1200px">
+			  <img class="mySlides" src="" style="width:100%">
+			  <img class="mySlides" src="" style="width:100%">
+			  <img class="mySlides" src="" style="width:100%">
+			  <img class="mySlides" src="" style="width:100%">  
+
+			  <div class="w3-row-padding w3-section">
+						    <div class="w3-col s4">
+						      <img class="demo w3-border w3-hover-shadow" src="" style="width:100%" onclick="currentDiv(1)">
+						    </div>
+						    <div class="w3-col s4">
+						      <img class="demo w3-border w3-hover-shadow" src="" style="width:100%" onclick="currentDiv(2)">
+						    </div>
+						    <div class="w3-col s4">
+						      <img class="demo w3-border w3-hover-shadow" src="" style="width:100%" onclick="currentDiv(3)">
+						    </div>
+						    <div class="w3-col s4">
+						      <img class="demo w3-border w3-hover-shadow" src="" style="width:100%" onclick="currentDiv(4)">
+						    </div>
+			  </div>
+</div>
+
+			<div id="product-name" class="single-product-name">Nayo</div>
+			<div id="product-brand" class="single-product-name">Navo mod</div>
+
+			<div id="product-sp" class="single-product-sp">Rs.999/-</div>
+			<div id="product-mp" class="single-product-mp">Rs.2999/-</div>
+			<div id="product-discount" class="single-product-discount glow_me">75%</div>			
+			<hr>
+			
+			<div class="product-name">Product description</div>
+			<hr>
+
+			<div class="product-name">Select Size:</div>
+			<div >
+						<input type="radio" id="rb1" name="rb" value="" checked>
+							<label for="rb1">Size 1</label><br>
+							<input type="radio" id="rb2" name="rb"value="">
+							<label for="rb2">Size 2</label><br>
+							<input type="radio" id="rb3" name="rb" value="">
+							<label for="rb3">Size 3</label>
+			</div>
+			<hr>
+
+
+			  <button id="addtocartbutton"  type="button" class="mybutton">Add to cart</button>
+			  <button type="button" class="mybutton" style="
+    position: absolute;
+    right: 0;
+">Add to Wish List</button>
+
+</div>
+
+	<script type="text/javascript" src="js/jmin.js"></script>
+	<script type="text/javascript" src="js/swal.js"></script>
+
+    <script type="text/javascript" src="js/odometer.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/sideMenuAndNavBarEvents.js"></script>    
+    <script type="text/javascript" src="js/index.ajax.js"></script>
+    
+
+    <script id="current-js" type="text/javascript" src=""></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/imgcss.css" />
+    <script type="text/javascript">
+        app.initialize();
+        swal('Welcome','Demo application! Requires server side scripts!','warning');
+    </script>
+
+    <script>
+
+			var slideIndex = 1;
+			showDivs(slideIndex);
+
+			function plusDivs(n) {
+			  showDivs(slideIndex += n);
+			}
+
+			function currentDiv(n) {
+			  showDivs(slideIndex = n);
+			}
+
+			function showDivs(n) {
+			  var i;
+			  var x = document.getElementsByClassName("mySlides");
+			  var dots = document.getElementsByClassName("demo");
+			  if (n > x.length) {slideIndex = 1}
+			  if (n < 1) {slideIndex = x.length}
+			  for (i = 0; i < x.length; i++) {
+			     x[i].style.display = "none";
+			  }
+			  for (i = 0; i < dots.length; i++) {
+			     dots[i].className = dots[i].className.replace(" w3-border-red", "");
+			  }
+			  x[slideIndex-1].style.display = "block";
+			  dots[slideIndex-1].className += " w3-border-red";
+			}
+</script>
+
+<script type="text/javascript">
+	//load product data
+	window.onload=loadObject;
+	var object=null;
+	function set(id,value) 
+	{
+		document.getElementById(id).innerHTML=value;
+	}
+	function loadObject()
+	{
+		var objects=JSON.parse(localStorage.getItem('products'));
+		var pid=localStorage.getItem('currentPid');
+		var p=null;
+		for (var i = 0; i < objects.length; i++) 
+		{
+			if(objects[i].pid==pid) 
+			{
+				p=objects[i];
+				object=p;
+
+				break;
+			}	
+		}
+		//set properties
+		var temp=document.getElementsByClassName('mySlides');
+		{
+			temp[0].setAttribute('src',p.img1);
+			temp[1].setAttribute('src',p.img2);
+			temp[2].setAttribute('src',p.img3);
+			temp[3].setAttribute('src',p.img4);
+		}
+		temp=document.getElementsByClassName('w3-hover-shadow');
+		{
+			temp[0].setAttribute('src',p.img1);
+			temp[1].setAttribute('src',p.img2);
+			temp[2].setAttribute('src',p.img3);
+			temp[3].setAttribute('src',p.img4);
+		}
+
+		set('product-name',p.name);
+		set('product-brand',p.brand);
+		set('product-sp',p.sp);
+		set('product-mp',p.mp);
+		set('product-discount',p.discount);
+
+		document.getElementById('addtocartbutton').onclick=function(argument) 
+		{
+			addProductCart();
+		};
+
+
+
+	}
+
+
+function addProductCart() 
+{
+    //read
+    console.log(object);
+    var rObject =JSON.parse(localStorage.getItem('products'));
+    var c=new Array();
+
+     //update state
+        if (localStorage.getItem("cart") === null) 
+        {        
+            c.push(object);            
+            localStorage.setItem("cart",JSON.stringify(c));
+            swal('Success','Product added to cart!','success');
+            for (var i = 0; i < rObject.length; i++) 
+            {
+	            if (rObject[i].pid==object.pid) 
+	            {
+	        		rObject[i].in_cart='yes';
+	        		break;    	
+	            }	
+            }
+            
+
+        }
+        else
+        {
+        	//if cart exists
+        	var flag=0;
+            c=JSON.parse(localStorage.getItem("cart"));            
+            
+            for (var i = 0; i < c.length; i++) 
+            {
+	            if (c[i].pid==object.pid) 
+	            {
+            		swal('Caution','Product already in cart!','warning');
+            		flag=1;
+            		break;
+            	}            		
+            }
+
+            if (flag==0)
+            {
+            	
+		            	c.push(object);
+		            	localStorage.setItem("cart",JSON.stringify(c));
+		            	swal('Success','Product added to cart!','success');           	
+
+		            	for (var i = 0; i < rObject.length; i++) 
+		            	{
+			        	    if (rObject[i].pid==object.pid) 
+			        	    {
+			       		 		rObject[i].in_cart='yes';    	
+			       		    }	
+		            	}
+				
+            }
+                        
+        }
+
+
+
+    localStorage.setItem("products",JSON.stringify(rObject));
+    document.getElementById('cart-badge').innerHTML=c.length;
+
+}
+</script>
+
+
+
+</body>
+
+</html>

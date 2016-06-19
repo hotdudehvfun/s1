@@ -1,0 +1,10 @@
+{
+  "name": "Shopping",
+  "description": "An online shopping application",
+  "launch_path": "/index.html",
+  "icons": {
+    "128": "/img/logo.png"
+  },
+  "default_locale": "en",
+  "type": "privileged"
+}

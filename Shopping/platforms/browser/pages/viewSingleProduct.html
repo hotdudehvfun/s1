@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/swal.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/odometer.css" /> 
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" /> 
+
+
+    <link id="current-css" rel="stylesheet" type="text/css" href="" />    
+
+    
+    <title>Shoppy</title>
+</head>
+
+<body>
+
+<!--nav bar starts -->
+<div id="nav-bar">
+
+			<div id="toggle-side-menu" data-menu-state="0">
+					<i id='nav-icon' class="fa fa-navicon" style="font-size: 30px;"></i>
+			</div>
+			<i id="img-search-button" class="fa fa-search img-search-button"></i>
+			<i id="img-cart-button" class="img-cart-button fa fa-shopping-bag"></i>
+			<span id="cart-badge" class="badge odometer">0</span>
+</div>
+<div class="fake-nav-bar"></div>
+<!--nav bar ends -->
+
+<!--side menu starts -->
+<div id="side-menu">
+		<!-- user tag -->
+		<div style="" id="user-tags-container">
+				
+				<!-- user picture -->
+				<img class="img-user-picture"/>	
+
+				<!-- user NAME-->
+				<div class="side-menu-user-name">Arun Sharma</div>
+				
+				<!-- user id-->
+				<div class="side-menu-user-id">hotdudehvfun@gmail.com</div>
+
+		</div>
+		<!-- menu main items -->
+		<div style="position: relative; top: 26%;">
+
+					<button class="menu-item" id="side-menu-item-home">
+					<img class="img-side-menu-home-button"/>Home</button>
+					
+
+					<button class="accordion">
+					<img class="img-side-menu-woman-button"/>
+					Woman
+					</button>
+
+						<div class="panel">
+						  
+								<button class="accordion">
+									<img class="img-side-menu-indian-wear-button"/>
+										Indian Wear					
+								</button>	  
+								<div id="side-menu-woman-indian-wear-panel" class="panel">
+								<button onclick="browseProducts('productName')" class="menu-item">Suits</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Kurta</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Salwars</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Dupatta</button>	
+								<button onclick="browseProducts('productName')"	 class="menu-item">Shawls</button>	
+								</div>
+						</div>
+
+					<button class="menu-item" id="side-menu-item-account">
+					<img class="img-side-menu-account-button"/>
+					Account
+					</button>
+
+					<button  class="menu-item" id="side-menu-item-orders">
+					<img class="img-side-menu-orders-button"/>
+					Orders
+					</button>
+					
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-rate-app">
+					<img class="img-side-menu-rate-app-button"/>
+					Rate App
+					</button>
+
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-settings">
+					<img class="img-side-menu-settings-button"/>
+					Settings
+					</button>
+					
+
+						
+		</div>
+		
+</div>
+<!--side menu ends-->
+
+<!--search query popup starts -->
+<div data-is-hidden="yes" id="search-popup-outer">
+		<div id="search-popup-inner">
+					<!-- search box -->
+					<form action="" method="GET">
+					    
+					    <input type="text" placeholder="search goes here">
+					</form>
+					<!-- results -->
+					<div id="search-results">
+						<div class="result-count">3 results</div>
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+							
+					</div>
+
+						
+		</div>
+	
+</div>
+	
+</div>
+<!--search query popup ends -->
+
+
+<div id="home-screen-content">	
+
+<div id="single-product-image-container">
+			<img id="img1" src="http://assets.myntassets.com/dpr_1/w_450,q_80/v1/assets/&#10;&#9;&#9;&#9;images/1275765/2016/3/23/11458715994163-Nayo-Navy-Kurta-3901458715993798-1.jpg">
+
+			<img id="img2" src="http://assets.myntassets.com/dpr_1/w_450,q_80/v1/assets/images/1275765/2016/3/23/11458715994090-Nayo-Navy-Kurta-3901458715993798-2.jpg">
+
+			<img id="img3" src="http://assets.myntassets.com/dpr_1/w_450,q_80/v1/assets/images/1275765/2016/3/23/11458715994014-Nayo-Navy-Kurta-3901458715993798-3.jpg">
+			</div>
+
+			<div onclick="toggleSingleProductImageView()" data-hidden="yes" id="single-product-view-more-images-button">View All Images</div>
+			
+
+			<div class="single-product-name">Nayo</div>
+			<div class="single-product-name">Navo mod</div>
+
+			<div class="single-product-sp">Rs.999/-</div>
+			<div class="single-product-mp">Rs.2999/-</div>
+			<div class="single-product-discount glow_me">75%</div>			
+			<hr>
+			
+			<div class="product-name">Product description</div>
+			<hr>
+
+			<div class="product-name">Select Size:</div>
+			<div >
+						<input type="radio" id="rb1" name="rb" value="" checked>
+							<label for="rb1">Size 1</label><br>
+							<input type="radio" id="rb2" name="rb"value="">
+							<label for="rb2">Size 2</label><br>
+							<input type="radio" id="rb3" name="rb" value="">
+							<label for="rb3">Size 3</label>
+			</div>
+			<hr>
+
+
+			  <button type="button" class="mybutton">Add to cart</button>
+			  <button type="button" class="mybutton" style="
+    position: absolute;
+    right: 0;
+">Add to Wish List</button>
+
+</div>
+
+	<script type="text/javascript" src="js/jmin.js"></script>
+	<script type="text/javascript" src="js/swal.js"></script>
+
+    <script type="text/javascript" src="js/odometer.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/sideMenuAndNavBarEvents.js"></script>    
+    <script type="text/javascript" src="js/index.ajax.js"></script>
+    
+
+    <script id="current-js" type="text/javascript" src=""></script>
+
+
+
+    <link rel="stylesheet" type="text/css" href="css/imgcss.css" />
+    <script type="text/javascript">
+        app.initialize();
+        swal('Welcome','Demo application! Requires server side scripts!','warning');
+    </script>
+</body>
+
+</html>

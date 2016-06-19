@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
+
+    
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/mycss.css" />
+    <link rel="stylesheet" type="text/css" href="css/w3.css" />
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/odometer.css" />    
+    <link rel="stylesheet" type="text/css" href="css/swal.css" />    
+
+    <link id="current-css" rel="stylesheet" type="text/css" href="" />    
+
+    
+    <title>Shoppy</title>
+</head>
+
+<body>
+<div id="preloader">
+    <div id="status">&nbsp;</div>
+</div>
+<!--nav bar starts -->
+
+<div id="nav-bar">
+
+			<div id="toggle-side-menu" data-menu-state="0">
+					<i id='nav-icon' class="fa fa-navicon" style="font-size: 30px;"></i>
+			</div>
+			<i id="img-search-button" class="fa fa-search img-search-button"></i>
+			<i id="img-cart-button" class="img-cart-button fa fa-shopping-bag"></i>
+			<span id="cart-badge" class="badge odometer">0</span>
+</div>
+
+<div class="fake-nav-bar"></div>
+<!--nav bar ends -->
+
+<!--side menu starts -->
+<div id="side-menu">
+		<!-- user tag -->
+		<div style="" id="user-tags-container">
+				
+				<!-- user picture -->
+				<img class="img-user-picture"/>	
+
+				<!-- user NAME-->
+				<div class="side-menu-user-name">Arun Sharma</div>
+				
+				<!-- user id-->
+				<div class="side-menu-user-id">hotdudehvfun@gmail.com</div>
+
+		</div>
+		<!-- menu main items -->
+		<div style="position: relative; top: 26%;">
+
+					<button class="menu-item" id="side-menu-item-home">
+					<img class="img-side-menu-home-button"/>Home</button>
+					
+
+					<button class="accordion">
+					<img class="img-side-menu-woman-button"/>
+					Woman
+					</button>
+
+						<div class="panel">
+						  
+								<button class="accordion">
+									<img class="img-side-menu-indian-wear-button"/>
+										Indian Wear					
+								</button>	  
+								<div id="side-menu-woman-indian-wear-panel" class="panel">
+								<button onclick="browseProducts('productName')" class="menu-item">Suits</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Kurta</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Salwars</button>	
+								<button onclick="browseProducts('productName')" class="menu-item">Dupatta</button>	
+								<button onclick="browseProducts('productName')"	 class="menu-item">Shawls</button>	
+								</div>
+						</div>
+
+					<button class="menu-item" id="side-menu-item-account">
+					<img class="img-side-menu-account-button"/>
+					Account
+					</button>
+
+					<button  class="menu-item" id="side-menu-item-orders">
+					<img class="img-side-menu-orders-button"/>
+					Orders
+					</button>
+					
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-rate-app">
+					<img class="img-side-menu-rate-app-button"/>
+					Rate App
+					</button>
+
+					<button onclick="swal('Alert','Feature yet to be implemented!','warning')" class="menu-item" id="side-menu-item-settings">
+					<img class="img-side-menu-settings-button"/>
+					Settings
+					</button>
+					
+
+						
+		</div>
+		
+</div>
+<!--side menu ends-->
+
+<!--search query popup starts -->
+<div data-is-hidden="yes" id="search-popup-outer">
+		<div id="search-popup-inner">
+					<!-- search box -->
+					<form action="" method="GET">
+					    
+					    <input type="text" placeholder="search goes here">
+					</form>
+					<!-- results -->
+					<div id="search-results">
+						<div class="result-count">3 results</div>
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+						<div class="result">
+							Product name in category
+						</div>					
+							
+					</div>
+
+						
+		</div>
+	
+</div>
+	
+</div>
+<!--search query popup ends -->
+
+
+<div id="home-screen-content">				
+
+
+			<div style="
+    text-align: center;
+    border: 1px solid rgb(32, 189, 153);
+    color: #20bd99;
+    background: rgba(32, 189, 153, 0.32);
+    font-size: 21px;
+    margin-top: 5%;
+">Confirm Address</div>
+	<div style="
+    /* text-align: center; */
+    margin-top: 10px;
+">Address details</div>
+	<input type="number" name="pin" placeholder="pincode">
+	
+	<input type="text" name="pin" placeholder="town">
+	
+	<input type="text" name="pin" placeholder="city">
+	
+	<input type="text" name="pin" placeholder="state">
+<div style="
+">Contact info.</div>
+<input type="text" name="pin" placeholder="name">
+<input type="number" name="pin" placeholder="phone  number">
+
+	
+	
+
+<hr>
+	<button onclick="window.location='index.html'" class="mybutton" style="
+">Cancel	</button>
+<button onclick="window.location='confirmPayment.html'" style="float:right" class="mybutton">Proceed to pay</button>
+
+	
+		
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="short-popup-target"></div>
+
+
+	<script type="text/javascript" src="js/jmin.js"></script>
+    <script type="text/javascript" src="js/odometer.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/sideMenuAndNavBarEvents.js"></script>    
+    <script type="text/javascript" src="js/index.ajax.js"></script>    
+    <script type="text/javascript" src="js/swal.js"></script>    
+
+
+    <link rel="stylesheet" type="text/css" href="css/imgcss.css" />
+    <script type="text/javascript">
+        app.initialize();
+        window.onload=function() 
+        {
+        	swal('Confrim Address Screen','No need to fill inputs! skip to next!');
+        }
+        
+    </script>
+</body>
+
+</html>
